@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChild, ElementRef, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ServerModel} from '../model/server.model';
 
 @Component({
@@ -6,24 +6,14 @@ import {ServerModel} from '../model/server.model';
   templateUrl: './server-element.component.html',
   styleUrls: ['./server-element.component.css']
 })
-export class ServerElementComponent implements OnInit, AfterContentInit {
+export class ServerElementComponent implements OnInit {
 
   @Input() server: ServerModel;
-  @ContentChild('contentParagraph', {static: true}) contentParagraph: ElementRef;
 
-  constructor() {
-    console.log('constructor called');
-  }
+
+  constructor() { }
 
   ngOnInit() {
-    console.log('ngOnInit called');
-    console.log('content paragraph' + this.contentParagraph.nativeElement.textContent);
-  }
-
-  ngAfterContentInit(): void {
-    console.log('ngAfterContentInit called');
-    console.log('content paragraph' + this.contentParagraph.nativeElement.textContent);
-
   }
 
 }
