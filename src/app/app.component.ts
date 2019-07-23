@@ -9,23 +9,9 @@ import {ServerManagerModel} from './model/server-manager.model';
 })
 export class AppComponent {
   title = 'udemy-angular8';
-  serverElements = [new ServerModel('server', 'Vista', 'Beta'),
-    new ServerModel('server', 'El Capital', 'Official'),
-    new ServerModel('blueprint', '12.04 LTS', 'Official')];
+  displayedFeature = 'recipe';
 
-  addServer(server: ServerManagerModel) {
-    this.serverElements.push({
-      type: 'server',
-      name: server.name,
-      content: server.content
-    });
-  }
-
-  addServerBluePrint(server: ServerManagerModel) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: server.name,
-      content: server.content
-    });
+  onNavigate(feature: string) {
+    this.displayedFeature = feature;
   }
 }

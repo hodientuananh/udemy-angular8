@@ -1,3 +1,5 @@
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+
 <div class="container">
   <app-server-management
     (eventServerCreated)="addServer($event)"
@@ -5,12 +7,9 @@
   </app-server-management>
   <hr>
   <div class="row">
-    <div class="col-xs-12">
-      <app-server-element
-        *ngFor="let serverElement of serverElements"
-        [server]="serverElement">
-
-      </app-server-element>
+    <div class="col-md-12">
+      <app-recipes *ngIf="displayedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="displayedFeature === 'shopping-list'"></app-shopping-list>
     </div>
   </div>
 </div>
