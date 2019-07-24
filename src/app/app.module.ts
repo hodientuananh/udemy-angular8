@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
-import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
-import { UnlessDirective } from './unless/unless.directive';
+import { ServerManagementComponent } from './server-management/server-management.component';
+import { ServerElementComponent } from './server-element/server-element.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicHighlightDirective,
-    BetterHighlightDirective,
-    UnlessDirective
+    ServerManagementComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

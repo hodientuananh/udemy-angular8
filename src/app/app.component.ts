@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ServerModel} from './model/server.model';
+import {ServerManagerModel} from './model/server-manager.model';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'udemy-angular8';
-  numbers = [1, 2, 3, 4, 5];
-  showNumber = false;
-  value = 5;
+  displayedFeature = 'recipe';
+
+  onNavigate(feature: string) {
+    this.displayedFeature = feature;
+  }
 }
