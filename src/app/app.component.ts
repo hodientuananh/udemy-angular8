@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'udemy-angular8';
+  numbers = [1, 2, 3, 4, 5];
+  showNumber = false;
+  value = 5;
 }
