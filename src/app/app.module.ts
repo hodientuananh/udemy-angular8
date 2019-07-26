@@ -52,8 +52,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     EditServerComponent,
     ServerComponent,
     PageNotFoundComponent,
-    ErrorPageComponent
-    ShoppingEditComponent,
+    ErrorPageComponent,
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent
@@ -66,7 +65,6 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     AppRoutingModule
   ],
   providers: [ServersService, AuthService, AuthGuardService, CanDeactiveGuardService, ServerResolverService, ShoppingListService],
-  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
