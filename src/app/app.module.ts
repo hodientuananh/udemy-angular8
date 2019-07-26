@@ -13,8 +13,6 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping/shopping-list/shopping-edit/shopping-edit.component';
-import {DropdownDirective} from './shared/dropdown.directive';
-import {ShoppingListService} from './shopping/shopping-list/shopping-list.service';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { ServersComponent } from './servers/servers.component';
@@ -29,6 +27,10 @@ import {AuthGuardService} from './auth-guard.service';
 import {CanDeactiveGuardService} from './servers/edit-server/can-deactive-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import {ServerResolverService} from './servers/server/server-resolver.service';
+import {DropdownDirective} from './shared/dropdown.directive';
+import {ShoppingListService} from './shopping/shopping-list/shopping-list.service';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,10 @@ import {ServerResolverService} from './servers/server/server-resolver.service';
     ServerComponent,
     PageNotFoundComponent,
     ErrorPageComponent
+    ShoppingEditComponent,
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +66,7 @@ import {ServerResolverService} from './servers/server/server-resolver.service';
     AppRoutingModule
   ],
   providers: [ServersService, AuthService, AuthGuardService, CanDeactiveGuardService, ServerResolverService, ShoppingListService],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
