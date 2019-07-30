@@ -1,8 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
 import {UsersComponent} from './users/users.component';
-import {UserComponent} from './users/user/user.component';
 import {ServersComponent} from './servers/servers.component';
 import {ServerComponent} from './servers/server/server.component';
 import {EditServerComponent} from './servers/edit-server/edit-server.component';
@@ -17,6 +15,8 @@ import {ShoppingListComponent} from './shopping/shopping-list/shopping-list.comp
 import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
 import {RecipeDetailComponent} from './recipes/recipe-detail/recipe-detail.component';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './users/user/user.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,13 +37,6 @@ const appRoutes: Routes = [
       {path: ':id/edit', component: RecipeEditComponent}
     ]},
   {path: 'shopping-list', component: ShoppingListComponent}
-];
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-
-const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'user/:id', component: UserComponent}
 ];
 
 @NgModule({
