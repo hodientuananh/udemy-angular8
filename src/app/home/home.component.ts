@@ -1,22 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import {interval, Observable, Observer} from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {interval, Observable, Observer, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+
+  myNumbersSubcription: Subscription;
+  myObservableSubcription: Subscription;
 
   constructor() { }
 
   ngOnInit() {
-    // const myNumbers = interval(1000);
-    // myNumbers.subscribe(
-    //   (number: number) => {
-    //     console.log(number);
-    // }
-    // );
+    const myNumbers = interval(1000);
+    this.myNumbersSubcription = myNumbers.subscribe(
+      (number: number) => {
+        console.log(number);
+    }
+    );
 
     const myObservable = new Observable(function (observer) {
       setTimeout(() => {
@@ -30,10 +33,10 @@ export class HomeComponent implements OnInit {
       }, 5000);
       setTimeout(() => {
         observer.complete();
-      }, 2000);
+      }, 7000);
     });
 
-    myObservable.subscribe(
+    this.myObservableSubcription = myObservable.subscribe(
       (data: string) => {
         console.log(data);
       },
@@ -44,6 +47,11 @@ export class HomeComponent implements OnInit {
         console.log('finish');
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.myNumbersSubcription.unsubscribe();
+    this.myObservableSubcription.unsubscribe();
   }
 
 }
