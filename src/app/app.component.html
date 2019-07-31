@@ -1,4 +1,15 @@
 <div class="container">
+  <app-server-management
+    (eventServerCreated)="addServer($event)"
+    (eventBlueprintCreated)="addServerBluePrint($event)">
+  </app-server-management>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [server]="serverElement">
+<div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <ul class="nav nav-tabs">
@@ -11,6 +22,11 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+      </app-server-element>
     </div>
   </div>
 </div>
