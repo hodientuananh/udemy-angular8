@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
 
@@ -10,7 +11,7 @@ export class FilterPipe implements PipeTransform {
     const propertyName = args[1];
     const resultArray = [];
 
-    if (value.length === 0) {
+    if (value.length === 0 || filterString === '') {
       return value;
     }
 
