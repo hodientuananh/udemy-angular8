@@ -31,9 +31,6 @@ import {DropdownDirective} from './shared/dropdown.directive';
 import {ShoppingListService} from './shopping/shopping-list/shopping-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { ServerManagementComponent } from './server-management/server-management.component';
-import { ServerElementComponent } from './server-element/server-element.component';
-import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -58,8 +55,7 @@ import {FormsModule} from '@angular/forms';
     ErrorPageComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
-    AppComponent,
+    RecipeEditComponent,
     ServerManagementComponent,
     ServerElementComponent
   ],
