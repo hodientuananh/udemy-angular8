@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ServersService} from './servers.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'udemy-angular8';
+  servers = [
+    {
+      name: 'Testserver',
+      capacity: 10,
+      id: this.generateId()
+    },
+    {
+      name: 'Liveserver',
+      capacity: 100,
+      id: this.generateId()
+    }
+  ];
+  constructor(private serverService: ServersService) {}
+  onAddServer(name: string) {
+    this.servers.push({
+      name: name,
+      capacity: 50,
+      id: this.generateId()
+    });
+  }
+  onSaveServer() {
+    this.serverService.storeServer(this.servers)
+      .subscribe(
+        (response) => {
+          console.log(response);
+          },
+        (err) => {
+          console.log(err);
+        }
+      );
+  }
+  private generateId() {
+    return Math.round(Math.random() * 10000);
+  }
 }
