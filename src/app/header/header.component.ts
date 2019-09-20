@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
       );
   }
 
+  onFetchData() {
+    this.dataStorageService.getRecipes();
+  }
+
   onSelect(feature: string) {
     this.featureSelected.emit(feature);
   }
