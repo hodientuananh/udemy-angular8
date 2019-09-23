@@ -19,6 +19,8 @@ import {RecipeService} from './recipes/recipe.service';
 import {DataStorageService} from './shared/data-storage.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SiginComponent } from './auth/signin/sigin.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {HttpModule} from '@angular/http';
     ShoppingEditComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SiginComponent
   ],
   imports: [
     BrowserModule,
