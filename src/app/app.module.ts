@@ -20,8 +20,8 @@ import {DataStorageService} from './shared/data-storage.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import { SignupComponent } from './auth/signup/signup.component';
-import { SiginComponent } from './auth/signin/sigin.component';
 import {AuthService} from './auth/auth-service';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import {AuthService} from './auth/auth-service';
     RecipeStartComponent,
     RecipeEditComponent,
     SignupComponent,
-    SiginComponent
+    SigninComponent
   ],
   imports: [
     BrowserModule,
